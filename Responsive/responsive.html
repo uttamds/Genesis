@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Make it responsive -->
+    <title>Responsive Page</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 90%; /* Responsive width */
+            width: 100%;
+            background: white;
+            padding: 20px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        .box {
+            width: 100%; /* Fluid width */
+            max-width: 300px; /* Prevent it from getting too large */
+            height: 200px;
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 200px;
+            margin: 10px auto;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 70%; /* Slightly larger on tablets */
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                max-width: 60%; /* More readable width for larger screens */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Responsive Layout</h2>
+        <p>This page adapts to different screen sizes!</p>
+        <div class="box">Fluid Box</div>
+    </div>
+
+</body>
+</html>
+
+
+
+<!-- 
+What was done to make the page responsive
+✅ Remove fixed widths.
+✅ Use fluid layouts (percentage-based widths).
+✅ Implement flexbox or CSS grid.
+✅ Add media queries for different screen sizes. 
+-->
+
+
+

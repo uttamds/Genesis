@@ -1,0 +1,66 @@
+Here are high-level training points for an **Introduction to SASS/SCSS Variables** session:  
+
+### **1. Introduction to SASS & SCSS**  
+   - What is **SASS** (Syntactically Awesome Stylesheets)?  
+   - Difference between **SASS (.sass)** and **SCSS (.scss)** syntax  
+   - Why use SASS? (Modularization, Maintainability, Reusability)  
+   - Installing SASS (Node.js, CLI, or Preprocessors)  
+
+### **2. Understanding SASS/SCSS Variables**  
+   - What are variables in SASS/SCSS?  
+   - Syntax for defining variables (`$variable-name: value;`)  
+   - Types of values that can be stored in variables:  
+     - Colors (`$primary-color: #3498db;`)  
+     - Fonts (`$main-font: Arial, sans-serif;`)  
+     - Sizes (`$base-font-size: 16px;`)  
+     - Spacing (`$spacing: 10px;`)  
+     - Booleans and Lists  
+
+### **3. Using Variables in Stylesheets**  
+   - Applying variables in **CSS properties**  
+   - Example:  
+     ```scss
+     $primary-color: #3498db;
+     body {
+       background-color: $primary-color;
+     }
+     ```  
+   - Using variables for **consistent theming**  
+
+### **4. Variable Scope & Nesting**  
+   - **Global vs. Local Scope**  
+   - Defining variables inside selectors  
+   - Example:  
+     ```scss
+     $global-color: #333;
+     .container {
+       $local-color: red;
+       color: $local-color;
+     }
+     ```  
+
+### **5. Default and Override Variables**  
+   - Using `!default` to set a variable if it’s not already defined  
+   - Example:  
+     ```scss
+     $theme-color: blue !default;
+     ```  
+
+### **6. Interpolation in Variables**  
+   - Using `#{$variable}` for dynamic property names  
+   - Example:  
+     ```scss
+     $size: "large";
+     .btn-#{$size} {
+       font-size: 20px;
+     }
+     ```  
+
+### **7. Practical Use Cases**  
+   - Creating **theme-based styles** with variables  
+   - Storing **breakpoints for media queries**  
+   - Managing **typography and spacing**  
+
+---
+
+Would you like hands-on exercises or code snippets for each topic? 😊

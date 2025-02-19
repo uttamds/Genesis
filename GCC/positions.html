@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Positioning Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Styling for the box */
+    .box {
+      width: 150px;
+      height: 150px;
+      background-color: lightcoral;
+      color: white;
+      text-align: center;
+      line-height: 150px; /* To center text vertically */
+      margin: 10px;
+      border: 2px solid darkred;
+    }
+
+    /* Static Position */
+    .static {
+      position: static;
+    }
+
+    /* Relative Position */
+    .relative {
+      position: relative;
+      top: 50px; /* Moves the box 50px down */
+      left: 50px; /* Moves the box 50px right */
+    }
+
+    /* Absolute Position */
+    .absolute {
+      position: absolute;
+      top: 100px; /* Moves the box 100px from the top of the nearest positioned ancestor */
+      left: 100px; /* Moves the box 100px from the left of the nearest positioned ancestor */
+    }
+
+    /* Fixed Position */
+    .fixed {
+      position: fixed;
+      bottom: 10px; /* 10px from the bottom of the viewport */
+      right: 10px; /* 10px from the right of the viewport */
+    }
+
+    /* Styling for container to see positioning */
+    .container {
+      width: 100%;
+      height: 500px;
+      border: 2px solid #333;
+      position: relative; /* So absolute positioning is relative to this container */
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Positioning Demo</h2>
+  
+  <!-- Static position -->
+  <div class="box static">
+    Static
+  </div>
+
+  <!-- Relative position -->
+  <div class="container">
+    <div class="box relative">
+      Relative
+    </div>
+  </div>
+
+  <!-- Absolute position -->
+  <div class="container">
+    <div class="box absolute">
+      Absolute
+    </div>
+  </div>
+
+  <!-- Fixed position -->
+  <div class="box fixed">
+    Fixed
+  </div>
+
+</body>
+</html>

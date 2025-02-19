@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1024"> <!-- Forces a fixed width -->
+    <title>Non-Responsive Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            width: 1024px; /* Fixed width */
+            margin: 0 auto; /* Centers content on larger screens */
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 900px; /* Fixed container width */
+            background: white;
+            padding: 20px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+        }
+
+        .box {
+            width: 300px; /* Fixed box width */
+            height: 200px; /* Fixed box height */
+            background-color: lightcoral;
+            text-align: center;
+            line-height: 200px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Non-Responsive Layout</h2>
+        <p>This page has a fixed width and does not adjust to different screen sizes.</p>
+        <div class="box">Fixed Box</div>
+    </div>
+
+</body>
+</html>

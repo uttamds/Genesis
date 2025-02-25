@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            background-color: #f4f4f4;
+        }
+        h2 {
+            color: #333;
+        }
+        table {
+            width: 50%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background: #007bff;
+            color: white;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #errorMessage {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody"></tbody>
+    </table>
+
+    <input type="text" id="studentName" placeholder="Enter student name">
+    <button id="addStudentBtn">Add Student</button>
+    <p id="errorMessage"></p>
+
+    <script>
+        let students = ["Alice", "Bob", "Charlie"];
+
+        document.addEventListener("DOMContentLoaded", function () {
+            displayStudents();
+
+            document.getElementById("addStudentBtn").addEventListener("click", function () {
+                let studentInput = document.getElementById("studentName");
+                let newStudent = studentInput.value.trim();
+                let errorMessage = document.getElementById("errorMessage");
+                
+                if (newStudent) {
+                    students.push(newStudent);
+                    studentInput.value = "";
+                    errorMessage.textContent = ""; // Clear error if input is valid
+                    displayStudents();
+                } else {
+                    errorMessage.textContent = "Please enter a student name before adding.";
+                }
+            });
+        });
+
+        function displayStudents() {
+            let tableBody = document.getElementById("studentTableBody");
+            tableBody.innerHTML = "";
+            students.forEach((student, index) => {
+                let row = document.createElement("tr");
+                row.innerHTML = `<td>${index + 1}</td><td>${student}</td>`;
+                tableBody.appendChild(row);
+            });
+        }
+    </script>
+</body>
+</html>

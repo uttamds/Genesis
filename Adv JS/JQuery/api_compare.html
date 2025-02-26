@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <h1 id="heading">Hello, jQuery!</h1>
+    <button id="btn">Click Me</button>
+
+    <script>
+      console.time("API Request Time"); // Start timer
+
+      $.get("https://dummyjson.com/users", (data) => {
+        console.log(data); // Log API response
+        console.timeEnd("API Request Time"); // End timer and log duration
+      });
+
+      //Vanilla JS
+
+      /* console.time("API Request Time"); // Start timer
+        fetch("https://dummyjson.com/users")
+          .then((response) => response.json())
+          .then((data) => console.log(data)); // Vanilla JS
+
+        console.timeEnd("API Request Time"); // End timer and log duration*/
+    </script>
+  </body>
+</html>

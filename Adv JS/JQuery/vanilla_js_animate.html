@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vanilla JS Animation</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: none; /* Initially hidden */
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            font-weight: bold;
+            transition: opacity 1s ease, max-height 1s ease;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="fadeBtn">Fade In/Out</button>
+    <button id="slideBtn">Slide Up/Down</button>
+    <div id="box">Hello!</div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const box = document.getElementById("box");
+            const fadeBtn = document.getElementById("fadeBtn");
+            const slideBtn = document.getElementById("slideBtn");
+
+            // Function to toggle fade effect
+            fadeBtn.addEventListener("click", function () {
+                if (box.style.opacity == "0" || box.style.display === "none") {
+                    box.style.display = "block";
+                    setTimeout(() => box.style.opacity = "1", 10);
+                } else {
+                    box.style.opacity = "0";
+                    setTimeout(() => box.style.display = "none", 1000);
+                }
+            });
+
+            // Function to toggle slide effect
+            slideBtn.addEventListener("click", function () {
+                if (box.style.maxHeight == "0px" || box.style.display === "none") {
+                    box.style.display = "block";
+                    box.style.maxHeight = "200px";
+                    box.style.opacity = "1";
+                } else {
+                    box.style.maxHeight = "0px";
+                    box.style.opacity = "0";
+                    setTimeout(() => box.style.display = "none", 1000);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

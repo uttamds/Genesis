@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Animation Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: none; /* Initially hidden */
+            text-align: center;
+            line-height: 200px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="fadeBtn">Fade In/Out</button>
+    <button id="slideBtn">Slide Up/Down</button>
+    <div id="box">Hello!</div>
+
+    <script>
+        $(document).ready(function () {
+            $("#fadeBtn").click(function () {
+                $("#box").fadeToggle(1000); // Fades in/out in 1 second
+            });
+
+            $("#slideBtn").click(function () {
+                $("#box").slideToggle(1000); // Slides up/down in 1 second
+            });
+        });
+    </script>
+
+</body>
+</html>

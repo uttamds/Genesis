@@ -1,13 +1,21 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 
-// ElectronicsGoods Component
-function ElectronicsGoods() {
-  return <h2>Electronics Goods List</h2>;
+// Individual Components
+function Electronics() {
+  return <h2>Academics Section</h2>;
+}
+
+function Personal() {
+  return <h2>Sports Section</h2>;
+}
+
+function Entertainment() {
+  return <h2>Food Section</h2>;
 }
 
 // Home Component
-function Home() {
+function Amazon() {
   return (
     <div>
       <h1>Categories</h1>
@@ -15,8 +23,12 @@ function Home() {
         <li>
           <Link to="/electronics">Electronics</Link>
         </li>
-        <li>Personal</li>
-        <li>Food</li>
+        <li>
+          <Link to="/personal">Personal</Link>
+        </li>
+        <li>
+          <Link to="/entertainment">Entertainment</Link>
+        </li>
       </ul>
     </div>
   );
@@ -27,8 +39,10 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/electronics" element={<ElectronicsGoods />} />
+        <Route path="/" element={<Amazon />} />
+        <Route path="/electronics" element={<Electronics />} />
+        <Route path="/personal" element={<Personal />} />
+        <Route path="/entertainment" element={<Entertainment />} />
       </Routes>
     </Router>
   );

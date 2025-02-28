@@ -1,0 +1,70 @@
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+
+// Individual Components
+function Electronics() {
+  const [tvQty, setTvQty] = React.useState(0);
+  const [laptopQty, setLaptopQty] = React.useState(0);
+  const [mobileQty, setMobileQty] = React.useState(0);
+
+  return (
+    <div>
+      <h2>Electronics Section</h2>
+      <ul>
+        <li>
+          TV <button onClick={() => setTvQty(tvQty + 1)}>Add Qty: {tvQty}</button>
+        </li>
+        <li>
+          Laptop <button onClick={() => setLaptopQty(laptopQty + 1)}>Add Qty: {laptopQty}</button>
+        </li>
+        <li>
+          Mobile <button onClick={() => setMobileQty(mobileQty + 1)}>Add Qty: {mobileQty}</button>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+function Personal() {
+  return <h2>Sports Section</h2>;
+}
+
+function Entertainment() {
+  return <h2>Food Section</h2>;
+}
+
+// Home Component
+function Amazon() {
+  return (
+    <div>
+      <h1>Categories</h1>
+      <ul>
+        <li>
+          <Link to="/electronics">Electronics</Link>
+        </li>
+        <li>
+          <Link to="/personal">Personal</Link>
+        </li>
+        <li>
+          <Link to="/entertainment">Entertainment</Link>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+// App Component with Routing
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Amazon />} />
+        <Route path="/electronics" element={<Electronics />} />
+        <Route path="/personal" element={<Personal />} />
+        <Route path="/entertainment" element={<Entertainment />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;

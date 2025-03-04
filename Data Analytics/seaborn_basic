@@ -1,0 +1,31 @@
+import seaborn as sns
+import matplotlib.pyplot as plt
+import pandas as pd
+
+# Create a sample dataset
+data = {
+    "Category": ["A", "A", "A", "B", "B", "B", "C", "C", "C"],
+    "Value": [10, 15, 20, 25, 30, 35, 40, 45, 50]
+}
+df = pd.DataFrame(data)
+
+# Create a Seaborn barplot with category-wise values
+plt.figure(figsize=(6, 4))
+sns.barplot(x="Category", y="Value", data=df, ci=None, palette="pastel")
+
+# Title and labels
+plt.title("Category-wise Bar Plot")
+plt.xlabel("Category")
+plt.ylabel("Value")
+
+# Show plot
+plt.show()
+
+'''
+"deep" (default) → Rich, strong colors
+"muted" → Softer, less intense colors
+"bright" → High-contrast, vibrant colors
+"pastel" → Light, soft colors
+"dark" → Darker shades of colors
+"colorblind" → Optimized for colorblind accessibility
+'''

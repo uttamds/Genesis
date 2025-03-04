@@ -1,0 +1,23 @@
+### **Descriptive Statistics Concepts (with 2-line descriptions)**  
+
+1️⃣ **Mean (Average)** → The sum of all values divided by the number of values. It is sensitive to outliers.  
+
+2️⃣ **Median** → The middle value in a sorted dataset. It is more robust to outliers than the mean.  
+
+3️⃣ **Mode** → The most frequently occurring value in a dataset. A dataset can have **one (unimodal), two (bimodal), or more modes**.  
+
+4️⃣ **Range** → The difference between the maximum and minimum values. It gives a measure of data spread.  
+
+5️⃣ **Variance** → Measures how far each data point is from the mean, calculated as the average squared deviation from the mean.  
+
+6️⃣ **Standard Deviation** → The square root of variance, indicating how spread out the data points are from the mean.  
+
+7️⃣ **Interquartile Range (IQR)** → The difference between the **75th percentile (Q3) and 25th percentile (Q1)**, measuring data dispersion while ignoring outliers.  
+
+8️⃣ **Skewness** → Measures the asymmetry of data distribution; **positive skew** means a longer right tail, **negative skew** means a longer left tail.  
+
+9️⃣ **Kurtosis** → Measures the "tailedness" of the distribution; **high kurtosis** means more extreme outliers, **low kurtosis** means fewer.  
+
+🔟 **Summary Statistics (`describe()`)** → Provides a quick overview of count, mean, std deviation, min, max, and percentiles of data.  
+
+Would you like examples or a visualization for any of these? 😊

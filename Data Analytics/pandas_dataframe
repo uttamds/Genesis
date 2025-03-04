@@ -1,0 +1,24 @@
+import pandas as pd
+
+# Creating a simple dictionary
+data = {
+    'Name': ['Alice', 'Bob', 'Charlie'],
+    'Age': [25, 30, 35],
+    'City': ['New York', 'Los Angeles', 'Chicago']
+}
+
+# Converting dictionary to DataFrame
+df = pd.DataFrame(data)
+
+# Displaying the DataFrame
+print("DataFrame:\n", df)
+
+# Accessing a specific column
+print("\nAges:\n", df['Age'])
+
+# Accessing a specific row
+print("\nFirst Row:\n", df.loc[0])
+
+# Filtering data (people older than 28)
+filtered_df = df[df['Age'] > 28]
+print("\nFiltered Data (Age > 28):\n", filtered_df)

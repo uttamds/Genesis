@@ -1,0 +1,18 @@
+import numpy as np
+import pandas as pd
+
+# Sample data
+numbers = [10, 20, 30, 40, 50, 100]  # 100 is an outlier
+
+# Calculate mean and median using NumPy
+mean_value = np.mean(numbers)
+median_value = np.median(numbers)
+
+print("Mean:", mean_value)
+print("Median:", median_value)
+
+# Using Pandas
+df = pd.DataFrame({'Numbers': numbers})
+print("\nUsing Pandas:")
+print("Mean:", df['Numbers'].mean())
+print("Median:", df['Numbers'].median())

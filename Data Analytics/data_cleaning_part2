@@ -1,0 +1,35 @@
+import pandas as pd
+import numpy as np
+
+# Sample dataset
+data = {
+    'ID': [1, 2, 2, 3, 4, 5, 6, 7, 8, 9],
+    'Name': ['Alice', 'Bob', 'Bob', 'Charlie', 'David', 'Eve', None, 'George', 'Hannah', 'Ian'],
+    'Age': [25, 30, 30, np.nan, 45, 50, 22, 23, 120, -5],  # Outliers and missing value
+    'Salary': [50000, 60000, 60000, 70000, None, 90000, 40000, 30000, 20000, 100000],  # Missing value
+    'JoinDate': ['2022-01-15', '2021-06-20', '2021-06-20', '2020-03-10', '2019-12-05', None, '2023-05-18', '2022-07-21', '2021-09-30', '2018-11-11']
+}
+
+# Create a DataFrame
+df = pd.DataFrame(data)
+
+# 1. Handling Missing Values
+df['Age'].fillna(df['Age'].median(), inplace=True)  # Replace NaN in Age with median
+df['Salary'].fillna(df['Salary'].mean(), inplace=True)  # Replace NaN in Salary with mean
+df['Name'].fillna('Unknown', inplace=True)  # Replace missing names with 'Unknown'
+
+# 2. Removing Duplicates
+df.drop_duplicates(inplace=True)
+
+# 3. Converting Data Types
+df['JoinDate'] = pd.to_datetime(df['JoinDate'], errors='coerce')  # Convert to datetime
+
+# 4. Handling Outliers in Age (Assuming valid age range is 18-100)
+df.loc[df['Age'] > 100, 'Age'] = df['Age'].median()
+df.loc[df['Age'] < 18, 'Age'] = df['Age'].median()
+
+# 5. Removing Negative or Invalid Salary
+df = df[df['Salary'] > 0]
+
+# Display cleaned data
+print(df)

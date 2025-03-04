@@ -215,7 +215,7 @@ C. Semi-Structured Data (Mix of Structured & Unstructured)
 
 ---
 
-Choosing the Right Data Collection Method
+## Choosing the Right Data Collection Method
 🔹  For business insights?  CRM & databases.  
 🔹  For customer opinions?  Surveys & social media.  
 🔹  For real-time tracking?  IoT devices & sensors.  

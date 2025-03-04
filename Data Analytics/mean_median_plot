@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Sample data
+numbers = [10, 20, 30, 40, 50, 100]
+
+# Calculate mean and median
+mean_value = np.mean(numbers)
+median_value = np.median(numbers)
+
+# Plot the data points
+plt.figure(figsize=(8, 5))
+plt.scatter(range(len(numbers)), numbers, color='blue', label='Data Points', zorder=2)
+
+# Plot mean and median lines
+plt.axhline(mean_value, color='red', linestyle='--', label=f'Mean: {mean_value:.2f}', zorder=1)
+plt.axhline(median_value, color='green', linestyle='-.', label=f'Median: {median_value:.2f}', zorder=1)
+
+# Labels and title
+plt.xlabel("Index")
+plt.ylabel("Value")
+plt.title("Mean vs. Median Visualization")
+plt.legend()
+plt.grid(True, linestyle='--', alpha=0.6)
+
+# Show the plot
+plt.show()

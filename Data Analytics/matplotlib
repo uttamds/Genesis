@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Creating an array
+arr2 = np.array([5, 6, 7, 8])
+
+# Calculating the median
+median_value = np.median(arr2)
+
+# Plotting the array
+plt.plot(arr2, 'bo-', label="Data Points")
+
+# Marking the median
+plt.axhline(y=median_value, color='r', linestyle='--', label=f"Median: {median_value}")
+
+# Adding labels and legend
+plt.xlabel("Index")
+plt.ylabel("Value")
+plt.title("Median of Array")
+plt.legend()
+
+# Show plot
+plt.show()

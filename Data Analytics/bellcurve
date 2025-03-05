@@ -1,0 +1,18 @@
+import numpy as np
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+# Generate a normal distribution (bell curve) dataset
+data = np.random.normal(loc=50, scale=10, size=1000)  # Mean=50, Std Dev=10
+
+# Create a simple bell curve plot
+plt.figure(figsize=(6, 4))
+sns.histplot(data, bins=30, kde=True, color="blue")
+
+# Title and labels
+plt.title("Bell Curve (Normal Distribution)")
+plt.xlabel("Value")
+plt.ylabel("Frequency")
+
+# Show plot
+plt.show()

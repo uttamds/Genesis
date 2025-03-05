@@ -1,0 +1,28 @@
+### **📌 Short Notes on Advanced Data Operations & Feature Engineering**  
+
+#### **1️⃣ Advanced Pandas Operations**  
+✅ **Merging & Joining** – Used to combine multiple DataFrames based on keys (`merge()`, `join()`).  
+✅ **Pivoting** – Reshaping data using `pivot()` (wide format) & `pivot_table()` (aggregated format).  
+
+#### **2️⃣ Handling Time Series Data**  
+✅ **Parsing Dates** – Convert strings to datetime using `pd.to_datetime()`.  
+✅ **Resampling & Rolling Windows** – Aggregate data over time (`resample()`, `rolling()`).  
+
+#### **3️⃣ Working with Large Datasets (Dask & Vaex)**  
+✅ **Dask** – Parallel computing for handling **huge datasets** (`dask.dataframe` like Pandas).  
+✅ **Vaex** – Fast visualization & analytics on **billion-row datasets** without loading into RAM.  
+
+#### **4️⃣ Importance of Feature Engineering in Predictive Modeling**  
+✅ **Transforms raw data into meaningful features** for better model performance.  
+✅ **Improves accuracy** by capturing patterns in the data (e.g., time-based features).  
+
+#### **5️⃣ Creating New Features from Existing Data**  
+✅ **Polynomial Features** – Creating squared/cubic terms for non-linearity.  
+✅ **Date-based Features** – Extracting year, month, day, or weekday from timestamps.  
+
+#### **6️⃣ Feature Selection Techniques**  
+✅ **Filter Methods** – Use statistical tests (`correlation`, `variance threshold`).  
+✅ **Wrapper Methods** – Recursive feature selection (e.g., `RFE` with ML models).  
+✅ **Embedded Methods** – Models with built-in selection (e.g., Lasso, Decision Trees).  
+
+Would you like **Python code examples** for any of these? 😊

@@ -14,9 +14,9 @@ data = {
 df = pd.DataFrame(data)
 
 # 1. Handling Missing Values
-df['Age'].fillna(df['Age'].median(), inplace=True)  # Replace NaN in Age with median
-df['Salary'].fillna(df['Salary'].mean(), inplace=True)  # Replace NaN in Salary with mean
-df['Name'].fillna('Unknown', inplace=True)  # Replace missing names with 'Unknown'
+df.fillna({'Age': df['Age'].median()}, inplace=True)  # Replace NaN in Age with median
+df.fillna({'Salary': df['Salary'].mean()}, inplace=True)  # Replace NaN in Salary with mean
+df.fillna({'Name': 'Unknown'}, inplace=True)  # Replace missing names with 'Unknown'
 
 # 2. Removing Duplicates
 df.drop_duplicates(inplace=True)

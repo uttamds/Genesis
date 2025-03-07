@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+
+# Sample dataset: house size (in sq ft) and corresponding prices
+X = np.array([[500], [700], [900], [1100], [1300]])  # Features (house size)
+y = np.array([150000, 200000, 250000, 300000, 350000])  # Labels (house prices)
+
+# Create and train the model
+model = LinearRegression()
+
+model.fit(X, y)
+
+# Predict house price for a new house of size 1000 sq ft
+new_size = np.array([[1000]])
+predicted_price = model.predict(new_size)
+
+print(f"Predicted price for a 1000 sq ft house: ${predicted_price[0]:,.2f}")
+
+# Plot the data and model
+plt.scatter(X, y, color='blue', label='Actual Prices')
+plt.plot(X, model.predict(X), color='red', label='Regression Line')
+plt.scatter(new_size, predicted_price, color='green', label='Prediction')
+plt.xlabel("House Size (sq ft)")
+plt.ylabel("Price ($)")
+plt.legend()
+plt.show()

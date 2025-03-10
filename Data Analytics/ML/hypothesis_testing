@@ -1,0 +1,21 @@
+import numpy as np
+from scipy import stats
+
+# Sample data: Heights of 10 students (in cm)
+sample_heights = np.array([162, 168, 164, 170, 159, 166, 167, 165, 163, 161])
+
+# Population mean (Hypothesized value)
+mu = 165
+
+# Perform one-sample t-test
+t_stat, p_value = stats.ttest_1samp(sample_heights, mu)
+
+# Print results
+print(f"T-Statistic: {t_stat:.4f}")
+print(f"P-Value: {p_value:.4f}")
+
+# Decision Rule (Significance level = 0.05)
+if p_value < 0.05:
+    print("Reject the null hypothesis: The average height is significantly different from 165 cm.")
+else:
+    print("Fail to reject the null hypothesis: No significant difference from 165 cm.")

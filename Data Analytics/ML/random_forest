@@ -1,0 +1,28 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import train_test_split
+
+# Example dataset: House sizes (in square feet) and their corresponding prices (in $1000)
+X = np.array([500, 700, 900, 1100, 1300, 1500, 1700, 1900, 2100, 2300]).reshape(-1, 1)  # House sizes
+y = np.array([150, 180, 210, 250, 280, 310, 340, 370, 400, 430])  # Prices in $1000
+
+# Train-test split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Train the Random Forest Regressor
+rf_regressor = RandomForestRegressor(n_estimators=100, random_state=42)
+rf_regressor.fit(X_train, y_train)
+
+# Predict values
+y_pred = rf_regressor.predict(X_test)
+
+# Visualizing Predictions
+plt.scatter(X_test, y_test, color="red", label="Actual Prices")
+plt.scatter(X_test, y_pred, color="blue", label="Predicted Prices")
+plt.plot(X, rf_regressor.predict(X), color="green", linestyle="dashed", label="Regression Line")
+plt.legend()
+plt.xlabel("House Size (sq ft)")
+plt.ylabel("Price ($1000)")
+plt.title("Random Forest Regression: House Price Prediction")
+plt.show()

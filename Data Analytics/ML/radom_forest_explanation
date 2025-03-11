@@ -1,0 +1,21 @@
+import numpy as np → Imports NumPy, a library for handling numerical data and arrays.
+import matplotlib.pyplot as plt → Imports Matplotlib, a library for visualizing data.
+from sklearn.ensemble import RandomForestRegressor → Imports RandomForestRegressor from sklearn.ensemble, which helps in regression tasks using the Random Forest algorithm.
+from sklearn.model_selection import train_test_split → Imports train_test_split, a function used to split the dataset into training and testing sets.
+
+
+X → Represents house sizes (in square feet) as input features.
+y → Represents house prices (in $1000) as the target variable.
+.reshape(-1,1) → Converts X into a 2D array because RandomForestRegressor requires a 2D input.
+
+Splits the dataset into training and testing sets:
+test_size=0.2 → 20% of data is used for testing, and 80% for training.
+random_state=42 → Ensures reproducibility (same results every time).
+X_train, X_test, y_train, y_test → Stores training and test data.
+
+Creates a RandomForestRegressor model:
+n_estimators=100 → The model will create 100 decision trees.
+random_state=42 → Ensures the same results each time the model runs.
+Trains the model using the training data with .fit(X_train, y_train).
+
+

@@ -1,5 +1,5 @@
-🔹 numpy – Used for numerical operations.
-🔹 matplotlib.pyplot – Used for plotting graphs (decision boundary).
+- numpy – Used for numerical operations.
+- matplotlib.pyplot – Used for plotting graphs (decision boundary).
 🔹 sklearn.datasets – Provides access to sample datasets (we use load_iris()).
 🔹 sklearn.model_selection.train_test_split – Splits data into training and testing sets.
 🔹 sklearn.svm.SVC – The Support Vector Classifier (SVC) for classification.

@@ -35,7 +35,14 @@ def plot_decision_boundary(X, y, model):
     Z = Z.reshape(xx.shape)
 
     plt.contourf(xx, yy, Z, alpha=0.3)
-    plt.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k', marker='o', s=50, cmap=plt.cm.Set1)
+    
+    # Create a scatter plot for the training points
+    scatter = plt.scatter(X[:, 0], X[:, 1], c=y, edgecolors='k', marker='o', s=50, cmap=plt.cm.Set1)
+    
+    # Create a legend
+    handles, labels = scatter.legend_elements()
+    plt.legend(handles, iris.target_names, title="Classes")
+    
     plt.xlabel("Feature 1")
     plt.ylabel("Feature 2")
     plt.title("SVM Decision Boundary")

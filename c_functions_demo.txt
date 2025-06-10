@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int total_bill(int bill){
+    return bill * 1.18;
+}
+
+void showbill(int bill){
+    printf("\nThe total bill is %d\n" , bill);
+}
+
+
+void time_of_day(int hour){
+     printf("Now the time is %d  ", hour);
+}
+void greet(char name[], int age, int t, int b){
+    printf("\nHello %s you are %d yrs old\n" , name, age);
+    time_of_day(t);
+    int tb = total_bill(b);
+    tb = tb + 100;
+    showbill(tb);
+}
+int main()
+{
+    greet("Sudha", 19, 1, 5000 );
+    greet("Uttam" , 48 , 3, 6000);
+    greet("Kiran" , 33 , 4, 10000);
+   
+    return 0;
+}

@@ -3,8 +3,8 @@ from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
 
 # Download necessary resources
-nltk.download('punkt')
-nltk.download('stopwords')
+nltk.download('punkt_tab', quiet=True)
+nltk.download('stopwords', quiet=True)
 
 # Example sentence
 text = "NLP is amazing! It helps computers understand human language."

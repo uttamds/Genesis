@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+class Student{
+    private:
+    string name, usn, address, phone;
+    public:
+    void accept_Data()
+    {
+        cout<<"Enter student data";
+        cin>>name>>usn>>address>>phone;
+    }
+    void show_Data()
+    {
+        cout<<"Name ="<<name<<"\n";
+        cout<<"USN ="<<usn<<"\n";
+        cout<<"Addr ="<<address<<"\n";
+        cout<<"Phone ="<<phone<<"\n";
+    }
+};
+int main()
+{
+    Student s1;
+    s1.accept_Data();
+    s1.show_Data();
+    return 0;
+}

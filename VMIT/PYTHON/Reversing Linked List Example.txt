@@ -1,0 +1,59 @@
+
+# Reverse Linked List
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+def reverse(head):
+    prev = None
+    curr = head
+
+    while curr:
+        nxt = curr.next
+        curr.next = prev
+        prev = curr
+        curr = nxt
+
+    return prev
+
+
+# Function to print linked list
+def display(head):
+    temp = head
+    while temp:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+    print("None")
+
+
+# ----------------------------
+# Related Data Example:
+# Train Route Stations
+# Bangalore -> Chennai -> Hyderabad -> Mumbai
+# ----------------------------
+
+# Creating nodes
+n1 = Node("Bangalore")
+n2 = Node("Chennai")
+n3 = Node("Hyderabad")
+n4 = Node("Mumbai")
+
+# Connecting nodes
+n1.next = n2
+n2.next = n3
+n3.next = n4
+
+head = n1
+
+print("Original Linked List:")
+display(head)
+
+# Reverse the linked list
+head = reverse(head)
+
+print("\nReversed Linked List:")
+display(head)
+

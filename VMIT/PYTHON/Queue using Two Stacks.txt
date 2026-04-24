@@ -1,0 +1,58 @@
+# Queue using Two Stacks
+
+class QueueUsingStacks:
+    def __init__(self):
+        self.stack1 = []   # For enqueue
+        self.stack2 = []   # For dequeue
+
+    # Add element to queue
+    def enqueue(self, data):
+        self.stack1.append(data)
+
+    # Remove element from queue
+    def dequeue(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+
+        if not self.stack2:
+            return "Queue is Empty"
+
+        return self.stack2.pop()
+
+    # Show front element
+    def front(self):
+        if not self.stack2:
+            while self.stack1:
+                self.stack2.append(self.stack1.pop())
+
+        if not self.stack2:
+            return "Queue is Empty"
+
+        return self.stack2[-1]
+
+    # Display queue
+    def display(self):
+        queue_items = self.stack2[::-1] + self.stack1
+        print("Queue:", queue_items)
+
+
+# -------------------------
+# Example Usage
+# -------------------------
+
+q = QueueUsingStacks()
+
+q.enqueue(10)
+q.enqueue(20)
+q.enqueue(30)
+
+q.display()
+
+print("Dequeued:", q.dequeue())
+q.display()
+
+q.enqueue(40)
+q.display()
+
+print("Front Element:", q.front())

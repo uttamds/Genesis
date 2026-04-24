@@ -1,0 +1,73 @@
+# Detect Cycle in Linked List using Floyd's Algorithm
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+
+# Function to detect cycle
+def has_cycle(head):
+    slow = fast = head
+
+    while fast and fast.next:
+        slow = slow.next          # move 1 step
+        fast = fast.next.next    # move 2 steps
+
+        if slow == fast:
+            return True
+
+    return False
+
+
+# Function to display limited nodes (safe printing)
+def display(head, limit=10):
+    temp = head
+    count = 0
+
+    while temp and count < limit:
+        print(temp.data, end=" -> ")
+        temp = temp.next
+        count += 1
+
+    if temp:
+        print("... (cycle may exist)")
+    else:
+        print("None")
+
+
+# ----------------------------
+# Create Linked List
+# 10 -> 20 -> 30 -> 40 -> 50
+# ----------------------------
+
+n1 = Node(10)
+n2 = Node(20)
+n3 = Node(30)
+n4 = Node(40)
+n5 = Node(50)
+
+n1.next = n2
+n2.next = n3
+n3.next = n4
+n4.next = n5
+
+head = n1
+
+print("Linked List:")
+display(head)
+
+print("Cycle Exists?", has_cycle(head))
+
+
+# ----------------------------
+# Create Cycle
+# 50 points back to 20
+# ----------------------------
+
+n5.next = n2
+
+print("\nAfter Creating Cycle:")
+display(head)
+
+print("Cycle Exists?", has_cycle(head))

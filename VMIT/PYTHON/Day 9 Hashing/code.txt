@@ -1,0 +1,48 @@
+#collision
+#=================
+
+# Hash Table with Chaining
+
+class HashTable:
+    def __init__(self, size=10):
+        self.size = size
+        self.table = [[] for _ in range(size)]  # list of lists
+
+    def hash_func(self, key):
+        return key % self.size
+
+    def insert(self, key, value):
+        index = self.hash_func(key)
+
+        # Check if key already exists → update
+        for i, (k, v) in enumerate(self.table[index]):
+            if k == key:
+                self.table[index][i] = (key, value)
+                return
+
+        # Otherwise append (collision handled here)
+        self.table[index].append((key, value))
+
+    def get(self, key):
+        index = self.hash_func(key)
+
+        for k, v in self.table[index]:
+            if k == key:
+                return v
+
+        return "Key not found"
+
+    def display(self):
+        for i, bucket in enumerate(self.table):
+            print(f"Index {i}: {bucket}")
+
+
+ht = HashTable()
+
+ht.insert(15, "Rahul")
+ht.insert(25, "Amit")   # Collision with 15 (same index)
+ht.insert(35, "Neha")   # Collision again
+
+ht.display()
+
+print(ht.get(25))
